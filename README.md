@@ -1,15 +1,90 @@
-# Traffic Sign Recognition for Elderly (GTSRB)
+# Traffic-Sign Recognition & Auditory Guidance for Elderly Users
 
-This Colab notebook trains a lightweight CNN to classify 43 GTSRB traffic-sign classes and can speak the result.
+This project builds a **lightweight traffic-sign classifier** and a simple **audio prompt** pipeline designed to assist elderly or low-vision users. It trains a compact **TinyCNN** on the **GTSRB** dataset (43 classes), produces **paper-ready figures**, and optionally speaks predictions using **Text-to-Speech (TTS)**. A minimal **real-time** script is included to combine an (optional) YOLOv8-nano detector + the classifier + voice on a webcam feed.
 
-## Quick start (Colab)
-1. Open the notebook.
-2. Run cells to download data, train, and test.
-3. Optional: run the TTS cell to hear predictions.
+<div align="center">
+  <!-- Replace with your figure after running the notebook -->
+  <img src="./figures/sample_predictions_grid.png" width="420" alt="Sample predictions grid" />
+</div>
 
-## File
-- `traffic_Sign_Recognition_For_Elderly.ipynb` – full, runnable pipeline.
+---
 
-## Requirements
-- Google Colab (recommended) or Python 3.10+
-- PyTorch, TorchVision, NumPy, Matplotlib, (optional) gTTS, Gradio
+## System Overview
+
+1. **Input**: an image (or live video frame).  
+2. **(Optional) Detect**: YOLOv8-nano finds sign boxes in the frame.  
+3. **Classify**: cropped signs are resized (48×48) and classified by a TinyCNN into one of 43 GTSRB classes.  
+4. **Speak**: the predicted label is mapped to a short phrase (e.g., “**Stop sign**” / “**Speed limit 50 kilometers per hour**”) and spoken via TTS.
+
+The full pipeline is optimized for simplicity and runs smoothly in **Google Colab** or locally on **CPU/GPU**.
+
+---
+
+## Key Features
+
+- **Beginner-friendly training**: one Colab notebook from setup → training → testing → saving weights.  
+- **Lightweight model**: TinyCNN (~0.6M params) reaches **~80%+** test accuracy on GTSRB in minutes.  
+- **Paper assets**: automatic 3×3 **prediction grid** and accuracy prints for reports.  
+- **Auditory output**: optional **gTTS** (notebook) or **pyttsx3** (local, offline) to speak sign names.  
+- **Real-time option**: demo script that connects (optional) YOLOv8-nano + TinyCNN + TTS to a webcam.
+
+---
+
+## Dataset
+
+- **GTSRB** (German Traffic Sign Recognition Benchmark): 43 classes.  
+  TorchVision can download it automatically inside the notebook.  
+- The notebook includes safe transforms (resize, light augmentation) and a 90/10 train/val split.
+
+---
+
+## Repository Structure (suggested)
+
+traffic-sign-recognition-for-elderly/
+├─ notebooks/
+│ └─ traffic_Sign_Recognition_For_Elderly.ipynb # main Colab notebook
+├─ weights/
+│ └─ tinycnn_fp32.pt # trained classifier (add after training)
+├─ figures/
+│ └─ sample_predictions_grid.png # paper-ready figure
+├─ demo/
+│ ├─ app.py # (optional) Gradio image-upload demo
+│ └─ realtime_sign_assist.py # (optional) webcam + (YOLO) + TTS
+├─ requirements.txt
+└─ README.md
+
+
+> You can start with just the notebook. Add weights/figures/demos after running it once.
+
+---
+
+## Software Architecture
+
+- **Language**: Python 3.10+  
+- **Core ML**: PyTorch (`torch`), TorchVision (`torchvision`)  
+- **Visualization**: Matplotlib  
+- **TTS**: `gTTS` (Colab/desktop) and `pyttsx3` (offline for local real-time)  
+- **(Optional) Detection**: Ultralytics YOLOv8-nano  
+- **Demo UI**: Gradio (optional)
+
+---
+
+## Quick Start
+
+### Run in **Google Colab** (recommended for first run)
+
+1. Open the notebook: `notebooks/traffic_Sign_Recognition_For_Elderly.ipynb`.  
+2. **Runtime → Change runtime type → GPU** (optional but faster).  
+3. Run the cells top-to-bottom. The notebook will:
+   - install matching PyTorch/TorchVision wheels,  
+   - download **GTSRB**,  
+   - train **TinyCNN**,  
+   - evaluate on the test set,  
+   - save **`weights/tinycnn_fp32.pt`**,  
+   - create **`figures/sample_predictions_grid.png`**,  
+   - (optional) speak predictions with **gTTS**.
+
+> After training completes, download `tinycnn_fp32.pt` and the figure, or commit them to your repo.
+
+---
+
