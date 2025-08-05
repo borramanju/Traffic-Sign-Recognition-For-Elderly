@@ -2,11 +2,11 @@
 
 This project builds a **lightweight traffic-sign classifier** and a simple **audio prompt** pipeline designed to assist elderly or low-vision users. It trains a compact **TinyCNN** on the **GTSRB** dataset (43 classes), produces **paper-ready figures**, and optionally speaks predictions using **Text-to-Speech (TTS)**. A minimal **real-time** script is included to combine an (optional) YOLOv8-nano detector + the classifier + voice on a webcam feed.
 
-<img width="405" height="458" alt="Screenshot 2025-08-04 at 21 55 36" src="https://github.com/user-attachments/assets/849bc6af-cdfa-4937-bef1-2bacd4ac696a" />
+<img width="40" height="40" alt="Screenshot 2025-08-04 at 21 55 36" src="https://github.com/user-attachments/assets/849bc6af-cdfa-4937-bef1-2bacd4ac696a" />
 
-<img width="746" height="457" alt="Screenshot 2025-08-04 at 21 55 49" src="https://github.com/user-attachments/assets/0f684dbf-50a7-4c23-8f65-30049912ad84" />
+<img width="40" height="40" alt="Screenshot 2025-08-04 at 21 55 49" src="https://github.com/user-attachments/assets/0f684dbf-50a7-4c23-8f65-30049912ad84" />
 
-<img width="556" height="463" alt="Screenshot 2025-08-04 at 21 56 16" src="https://github.com/user-attachments/assets/ce8f8cd1-acad-4586-9bbb-c13910860b9f" />
+<img width="40" height="40" alt="Screenshot 2025-08-04 at 21 56 16" src="https://github.com/user-attachments/assets/ce8f8cd1-acad-4586-9bbb-c13910860b9f" />
 
 
 
@@ -43,7 +43,7 @@ The full pipeline is optimized for simplicity and runs smoothly in **Google Cola
 ---
 
 
-> You can start with just the notebook. Add weights/figures/demos after running it once.
+
 
 ---
 
@@ -72,7 +72,6 @@ The full pipeline is optimized for simplicity and runs smoothly in **Google Cola
    - create **`figures/sample_predictions_grid.png`**,  
    - (optional) speak predictions with **gTTS**.
 
-> After training completes, download `tinycnn_fp32.pt` and the figure, or commit them to your repo.
 
 ---
 
