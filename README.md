@@ -2,10 +2,6 @@
 
 This project builds a **lightweight traffic-sign classifier** and a simple **audio prompt** pipeline designed to assist elderly or low-vision users. It trains a compact **TinyCNN** on the **GTSRB** dataset (43 classes), produces **paper-ready figures**, and optionally speaks predictions using **Text-to-Speech (TTS)**. A minimal **real-time** script is included to combine an (optional) YOLOv8-nano detector + the classifier + voice on a webcam feed.
 
-<div align="center">
-  <!-- Replace with your figure after running the notebook -->
-  <img src="./figures/sample_predictions_grid.png" width="420" alt="Sample predictions grid" />
-</div>
 
 ---
 
@@ -37,21 +33,6 @@ The full pipeline is optimized for simplicity and runs smoothly in **Google Cola
 - The notebook includes safe transforms (resize, light augmentation) and a 90/10 train/val split.
 
 ---
-
-## Repository Structure (suggested)
-
-traffic-sign-recognition-for-elderly/
-├─ notebooks/
-│ └─ traffic_Sign_Recognition_For_Elderly.ipynb # main Colab notebook
-├─ weights/
-│ └─ tinycnn_fp32.pt # trained classifier (add after training)
-├─ figures/
-│ └─ sample_predictions_grid.png # paper-ready figure
-├─ demo/
-│ ├─ app.py # (optional) Gradio image-upload demo
-│ └─ realtime_sign_assist.py # (optional) webcam + (YOLO) + TTS
-├─ requirements.txt
-└─ README.md
 
 
 > You can start with just the notebook. Add weights/figures/demos after running it once.
