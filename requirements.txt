@@ -1,0 +1,10 @@
+torch>=2.3.0
+torchvision>=0.18.0
+numpy>=2.0.0
+matplotlib
+pillow
+gTTS            # notebook TTS (optional)
+gradio==4.44.0  # optional web demo
+ultralytics     # optional YOLOv8-nano detector
+opencv-python   # needed for realtime_sign_assist.py
+pyttsx3         # offline TTS for local real-time
