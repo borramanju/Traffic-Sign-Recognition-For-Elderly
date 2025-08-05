@@ -2,11 +2,11 @@
 
 This project builds a **lightweight traffic-sign classifier** and a simple **audio prompt** pipeline designed to assist elderly or low-vision users. It trains a compact **TinyCNN** on the **GTSRB** dataset (43 classes), produces **paper-ready figures**, and optionally speaks predictions using **Text-to-Speech (TTS)**. A minimal **real-time** script is included to combine an (optional) YOLOv8-nano detector + the classifier + voice on a webcam feed.
 
-<img width="40" height="40" alt="Screenshot 2025-08-04 at 21 55 36" src="https://github.com/user-attachments/assets/849bc6af-cdfa-4937-bef1-2bacd4ac696a" />
+<img width="250" height="250" alt="Screenshot 2025-08-04 at 21 55 36" src="https://github.com/user-attachments/assets/849bc6af-cdfa-4937-bef1-2bacd4ac696a" />
 
-<img width="40" height="40" alt="Screenshot 2025-08-04 at 21 55 49" src="https://github.com/user-attachments/assets/0f684dbf-50a7-4c23-8f65-30049912ad84" />
+<img width="250" height="250" alt="Screenshot 2025-08-04 at 21 55 49" src="https://github.com/user-attachments/assets/0f684dbf-50a7-4c23-8f65-30049912ad84" />
 
-<img width="40" height="40" alt="Screenshot 2025-08-04 at 21 56 16" src="https://github.com/user-attachments/assets/ce8f8cd1-acad-4586-9bbb-c13910860b9f" />
+<img width="250" height="250" alt="Screenshot 2025-08-04 at 21 56 16" src="https://github.com/user-attachments/assets/ce8f8cd1-acad-4586-9bbb-c13910860b9f" />
 
 
 
